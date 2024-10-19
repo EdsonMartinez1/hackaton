@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.showcase img {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+header .logo {
+    background: transparent;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.container {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li {
+    list-style: none;
+    display: inline-grid;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s;
+}
+nav ul li::after {
+    content: '';
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+}
+nav ul li:hover {
+    color: #069be0;
+}
+nav ul li:hover::after {
+    top: 50%;
+    opacity: 1;
+}
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2;
+}
+.showcase.active {
+    right: 300px;
+}
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #156275;
+    mix-blend-mode: overlay;
+}
+.text {
+    position: relative;
+    z-index: 10;
+}
+.text h2 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+.text h3 {
+    font-size: 5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+.text p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+}
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+.text a:hover {
+    letter-spacing: 6px;
+}
+.social {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social li {
+    list-style: none;
+}
+.social li a {
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+.social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu ul {
+    position: relative;
+}
+.menu ul li {
+    list-style: none;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+}
+.menu ul li a:hover {
+    color: #03a9f4;
+}
+
+@media (max-width: 991px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+    .text h2 {
+        font-size: 3rem;
+    }
+    .text h3 {
+        font-size: 2rem;
+    }
+}
+
+/*---------------------------------*/
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    display: flex; /* Alinea los elementos en fila */
+    list-style-type: none; /* Elimina las viñetas de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block; /* Asegura que cada contenedor del tooltip esté en línea */
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+    padding: 10px 20px; /* Espaciado alrededor del texto */
+    margin-right: 20px; /* Espaciado entre tooltips */
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posición del tooltip */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el tooltip horizontalmente */
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap; /* Asegura que el tooltip no se envuelva en varias líneas */
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* El triángulo se coloca en la parte inferior del tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent; /* Triángulo */
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1; /* Corrige la opacidad a 1 */
+}
+
+/* Media Queries para ajustar el tooltip en pantallas pequeñas */
+@media (max-width: 768px) {
+    .tooltip {
+        
+        width: 150px; /* Reduce el ancho del tooltip */
+        font-size: 14px; /* Cambia el tamaño de fuente del tooltip */
+    }
+
+    .tooltip-container {
+        padding: 5px 10px; /* Reduce el espaciado del contenedor */
+    }
+}
+
+@media (max-width: 480px) {
+    .tooltip {
+        width: 120px; /* Reduce aún más el ancho del tooltip */
+        font-size: 12px; /* Cambia el tamaño de fuente del tooltip */
+    }
+
+    .tooltip-container {
+        padding: 5%; /* Ajusta el espaciado del contenedor */
+    }
+}
+
+ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.tooltip-container {
+    position: relative; /* Necesario para posicionar el submenú */
+    display: inline-block; /* Asegura que el tooltip se posicione correctamente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.tooltip {
+    display: block; /* Mostrar la información adicional */
+    
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 100%; /* Colocar debajo del texto */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.submenu {
+    display: none; /* Ocultar el submenú por defecto */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Color de fondo del submenú */
+    border: 1px solid #6b36fd;
+    position: absolute; /* Asegura que se superponga al contenido */
+    top: 100%; /* Colocar debajo de la opción principal */
+    left: 0; /* Alinear a la izquierda */
+    width: 150px; /* Ancho fijo para el submenú */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.submenu li {
+    padding: 10px; /* Espaciado interno de las subopciones */
+    cursor: pointer; /* Cambiar cursor al pasar sobre las subopciones */
+}
+
+.submenu li:hover {
+    background-color: #e9e7f3; /* Color al pasar el mouse */
+}
+
+/* Mostrar el submenú al pasar el mouse sobre el contenedor */
+.tooltip-container:hover .submenu {
+    display: block; /* Mostrar el submenú */
+}

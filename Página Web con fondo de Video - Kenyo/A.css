@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Color de fondo */
+}
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+}
+
+header {
+    display: flex; /* Usar flexbox para alinear el logo y el título */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+h1 {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 24px; /* Tamaño del título */
+}
+
+.logo {
+    width: 50px; /* Ajustar el tamaño del logo */
+    height: auto; /* Mantener la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el título */
+}
+
+section {
+    margin: 20px 0; /* Margen entre secciones */
+}
+
+h2 {
+    color: #333; /* Color del título de las secciones */
+}
+
+p {
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+a {
+    color: #0066cc; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
